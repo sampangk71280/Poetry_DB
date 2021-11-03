@@ -46,7 +46,7 @@ body {
 
 .nav {
     grid-area: nav;
-    background-color: #000000;  /* black  */
+    background-color: #ff913a;  /* orange  */
     font-size: 150%;
     padding: 20px;
     vertical-align: middle;
@@ -123,7 +123,7 @@ body {
 
 /* logo, banner and footer background are the same */
 .banner, .footer {
-    background-color: #4c9c72;  /* dark green */
+    background-color: #fb0000;  /* bold red */
 }
 
 /* Set font on dark areas to white */
@@ -141,9 +141,9 @@ a.topnav:hover {color: #707a00; text-decoration: none;}
 
 /* links in page */
 a {font-weight: bold;}
-a:link{color: #4c9c72;} /* dark green */
-a:visited{color: #4c9c72;} /* dark green */
-a:hover{color: #a7d6b5;}    /* light  Green*/
+a:link{color: #ffffff;} /* white */
+a:visited{color: #FF0000;} /* red */
+a:hover{color: #FF5D5D;}    /* pastel red*/
 
 /* #### Headings / text styling #### */
 h1, h2, h3, h4 {
