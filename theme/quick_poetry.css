@@ -150,6 +150,12 @@ h1, h2, h3, h4 {
     font-family: 'Ubuntu', sans-serif;
 }
 
+h5 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
 .sub_heading {
     font-family: 'Ubuntu', sans-serif;
     color: #593849; /* purple */
@@ -218,7 +224,15 @@ input {
 }
 
 .tag{
-    background-color: bisque;
+    background-color: bisque ; 
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: solid 1px #000;
+    border-radius: 5px;
+}
+.authortag{
+    background-color: #FFA660; /* orange */
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;

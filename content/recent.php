@@ -14,17 +14,32 @@ do {
     $content = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Content']);
 
     // get author name
-    // include("get_author.php");
+    include("get_author.php");
 
     ?>
 <div class="results">
-    <p>
+    <!-- show title -->
+    <h5>
         <?php echo $title; ?><br/> <br />
-        <?php echo $content; ?><br />
-        <!-- <a href="index.php?page=author&authorID=<?php echo $find_rs['Author_ID'];?>"> -->
-            <!-- <?php echo $full_name; ?> -->
+    </h5>
+
+    <!-- show content  -->
+    <p>   
+        <?php echo $content; ?><br /> <br />
+
+         <!-- show author name -->
+        <span class= "authortag">
+        <a href="index.php?page=author&authorID=<?php echo $find_rs['Author_ID'];?>">    
+        <?php echo $author_name; ?>
         </a>
+        </span>
     </p>
+
+    <?php include("show_era.php");
+    include("show_type.php"); ?>
+
+  
+       
 
 </div>
 
