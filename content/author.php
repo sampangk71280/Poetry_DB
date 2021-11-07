@@ -16,24 +16,30 @@ $find_rs = mysqli_fetch_assoc($find_query);
 
 // get author name
 include("get_author.php");
+?> 
 
-$title = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Title']);
-
-?>
-
-<br />
-
+<br /> <br />
 <div class="about">
     <h2>
         <?php echo $author_name, " - all poems";?>
     </h2>
 </div> <!-- / about the author div --> 
 
+<?php
+// loop through titles and display
+do {
+    $title = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Title']);
+
+    
+
+?>
+
+<br />
+
+
 <br />
 
 <?php
-// loop through results and display them... 
-do {
 
     $content = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Content']);
 
