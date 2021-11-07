@@ -1,8 +1,8 @@
-<h2>Most Recent</h2>
+<h2>Random</h2>
 
 <?php 
 
-$find_sql = "SELECT * FROM `poetry` JOIN `author` ON(`author`.`Author_ID` = `poetry`.`Author_ID`) ORDER BY `ID` DESC LIMIT 5";
+$find_sql = "SELECT * FROM `poetry` JOIN `author` ON(`author`.`Author_ID` = `poetry`.`Author_ID`) ORDER BY RAND() LIMIT 5";
 
 $find_query = mysqli_query($dbconnect, $find_sql);
 $find_rs = mysqli_fetch_assoc($find_query);
