@@ -1,0 +1,64 @@
+<?php 
+
+if(!isset($_REQUEST['authorID']))
+{
+    header('Location: index.php');
+}
+
+$author_to_find = $_REQUEST['authorID'];
+
+$find_sql = "SELECT * FROM `poetry`
+JOIN author ON(`author`.`Author_ID` = `poetry`.`Author_ID`) 
+WHERE `poetry`.`Author_ID` = $author_to_find
+";
+$find_query = mysqli_query($dbconnect, $find_sql);
+$find_rs = mysqli_fetch_assoc($find_query);
+
+// get author name
+include("get_author.php");
+
+$title = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Title']);
+
+?>
+
+<br />
+
+<div class="about">
+    <h2>
+        <?php echo $author_name, " - all poems";?>
+    </h2>
+</div> <!-- / about the author div --> 
+
+<br />
+
+<?php
+// loop through results and display them... 
+do {
+
+    $content = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Content']);
+
+
+    ?>
+<div class="results">
+    <h5>
+        <?php echo $title; ?>
+     </h5>   
+    <p>
+        <?php echo  $content; ?><br />
+       
+    </p>
+    
+    <?php include("show_era.php"); ?>
+    <?php include("show_type.php"); ?>
+
+</div>
+
+<br />
+
+<?php
+
+} // end of display results 'do'
+
+while($find_rs = mysqli_fetch_assoc($find_query))
+
+?>

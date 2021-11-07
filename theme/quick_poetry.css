@@ -241,8 +241,8 @@ input {
 }
 
 .about{
-    background: #65de9f; /* light green */
-    border: solid 1px #4c9c72; /* green*/
+    background: #FFEC00; /* yellow */
+    border: solid 1px #E9D800; /* yellow but slightly darker*/
     padding: 10px;
     border-radius: 10px;
     margin-right: 20px;
