@@ -3,27 +3,27 @@
 
 $quick_find = mysqli_real_escape_string($dbconnect, $_POST['quick_search']);
 
-// Find subject ID
-$content_sql = "SELECT * FROM `poetry` WHERE `Content` LIKE '%$quick_find%'";
-$content_query = mysqli_query($dbconnect, $content_sql);
-$content_rs = mysqli_fetch_assoc($content_query);
+// Find type ID
+$type_sql = "SELECT * FROM `poetry` WHERE `Type_ID` LIKE '%$quick_find%'";
+$type_query = mysqli_query($dbconnect, $type_sql);
+$type_rs = mysqli_fetch_assoc($type_query);
 
-$content_count = mysqli_num_rows($content_query);
+$type_count = mysqli_num_rows($type_query);
 
-if ($content_count > 0 ) {
-    $content_ID = $content_rs['Content'];
+if ($type_count > 0 ) {
+    $type_ID = $type_rs['Type_ID'];
 }
 
 else{
     // If this is not set query below breaks
     // If it is set to zero, any poem which has less than three subjects will be displayed
-    $content_ID = "-1";
+    $type_ID = "-1";
 }
 
 $find_sql = "SELECT * FROM `poetry`
-JOIN author ON(`author`.`Author_ID` = `Content`.`Author_ID`)
+JOIN author ON(`author`.`Author_ID` = `poetry`.`Author_ID`)
 WHERE `name` LIKE '%$quick_find%'
-OR `Content` = $content_ID
+OR `Type_ID` = $type_ID
 ";
 $find_query = mysqli_query($dbconnect, $find_sql);
 $find_rs = mysqli_fetch_assoc($find_query);
@@ -52,8 +52,11 @@ do {
         <?php echo $content; ?><br />
         <a href="index.php?page=author&authorID=<?php echo $find_rs['Author_ID'];
         ?>">
+            <br/>
+            <span class="authortag">
             <?php echo $author_name; ?>
         </a>
+        </span>
     </p>
 
     <?php include("show_era.php"); ?>
