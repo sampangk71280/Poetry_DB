@@ -4,20 +4,23 @@
 $quick_find = mysqli_real_escape_string($dbconnect, $_POST['quick_search']);
 
 // Find type ID
-$type_sql = "SELECT * FROM `poetry` WHERE `Type_ID` LIKE '%$quick_find%'";
+$type_sql = "SELECT * FROM `type` WHERE `type_ID` LIKE '%$quick_find%'";
 $type_query = mysqli_query($dbconnect, $type_sql);
 $type_rs = mysqli_fetch_assoc($type_query);
 
 $type_count = mysqli_num_rows($type_query);
 
 if ($type_count > 0 ) {
-    $type_ID = $type_rs['Type_ID'];
+    $type_ID = $type_rs['type_ID'];
+    
 }
 
 else{
     // If this is not set query below breaks
     // If it is set to zero, any poem which has less than three subjects will be displayed
     $type_ID = "-1";
+    echo "hi";
+    echo $type_count; 
 }
 
 $find_sql = "SELECT * FROM `poetry`
@@ -52,7 +55,7 @@ do {
         <?php echo $content; ?><br />
         <a href="index.php?page=author&authorID=<?php echo $find_rs['Author_ID'];
         ?>">
-            <br/>
+            <br/> 
             <span class="authortag">
             <?php echo $author_name; ?>
         </a>
