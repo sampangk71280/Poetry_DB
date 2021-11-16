@@ -3,7 +3,7 @@
 
 $quick_find = mysqli_real_escape_string($dbconnect, $_POST['quick_search']);
 
-// Find type ID
+// Find Eype ID
 $type_sql = "SELECT * FROM `type` WHERE `type` LIKE '%$quick_find%'";
 $type_query = mysqli_query($dbconnect, $type_sql);
 $type_rs = mysqli_fetch_assoc($type_query);
@@ -21,11 +21,33 @@ else{
     $type_ID = "-1";
 }
 
+
+// Find Era ID
+// Find Eype ID
+$era_sql = "SELECT * FROM `era` WHERE `era` LIKE '%$quick_find%'";
+$era_query = mysqli_query($dbconnect, $era_sql);
+$era_rs = mysqli_fetch_assoc($era_query);
+
+$era_count = mysqli_num_rows($era_query);
+
+if ($era_count > 0 ) {
+    $era_ID = $era_rs['era_ID'];
+    
+}
+
+else{
+    // If this is not set query below breaks
+    // If it is set to zero, any poem which has less than three subjects will be displayed
+    $era_ID = "-1";
+}
+
 $find_sql = "SELECT * FROM `poetry`
 JOIN author ON(`author`.`Author_ID` = `poetry`.`Author_ID`)
 WHERE `name` LIKE '%$quick_find%'
 OR `Type_ID` = $type_ID
+OR `Era_ID` = $era_ID
 ";
+
 $find_query = mysqli_query($dbconnect, $find_sql);
 $find_rs = mysqli_fetch_assoc($find_query);
 $count = mysqli_num_rows($find_query);
