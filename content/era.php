@@ -1,4 +1,3 @@
-
 <?php 
 
 if(!isset($_REQUEST['eraID']))
@@ -65,13 +64,6 @@ while($find_rs = mysqli_fetch_assoc($find_query));
 else {
     // no results - display error
 ?>
-
-<h2>Oops!</h2>
-
-    <div class="error">
-        Sorry - there are no eras that match the search term <i><b>
-        <?php echo $quick_find?></b></i>. Please try again.
-    </div>
 
 <p>&nbsp;</p>
 
