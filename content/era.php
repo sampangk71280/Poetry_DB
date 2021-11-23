@@ -73,7 +73,7 @@ do {
 
         <!-- show type  -->
         <span class="tag">
-        <a href="index.php?=type&typeID=<?php echo $find_rs['Type_ID'];?>">
+        <a href="index.php?page=type&typeID=<?php echo $find_rs['Type_ID'];?>">
         <?php echo $type_rs['type'];?></a></span>
 
 

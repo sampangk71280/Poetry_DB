@@ -29,6 +29,11 @@ include("get_author.php");
 // loop through titles and display
 do {
     $title = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Title']);
+     
+    // get era 
+     include("show_era.php");
+     // get type
+     include("show_type.php");
 
     
 
@@ -49,17 +54,27 @@ do {
     <h5>
         <?php echo $title; ?>
      </h5>   
+
     <p>
-        <?php echo  $content; ?><br />
-       
+        <?php echo  $content; ?><br /><br />
+    
+         <!-- show era  -->
+         <span class="tag">
+        <a href="index.php?page=era&eraID=<?php echo $find_rs['Era_ID'];?>">
+        <?php echo $era_rs['era']; ?></a></span>
+        
+        &ensp;
+
+        <!-- show type  -->
+        <span class="tag">
+        <a href="index.php?page=type&typeID=<?php echo $find_rs['Type_ID'];?>">
+        <?php echo $type_rs['type'];?></a></span>
+
     </p>
     
-    <?php include("show_era.php"); ?>
-    <?php include("show_type.php"); ?>
 
 </div>
 
-<br />
 
 <?php
 
