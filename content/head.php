@@ -6,7 +6,7 @@
     <meta name="author" content="Kristelle Sampang">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Quick Quotes</title>
+    <title>Quick Poetry</title>
     
     <!-- Edit the link below / replace with your chosen google font -->
     <link href="https://fonts.googleapis.com/css?family=Lato%7cUbuntu" rel="stylesheet"> 

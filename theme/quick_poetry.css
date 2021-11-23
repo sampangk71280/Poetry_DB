@@ -143,7 +143,7 @@ a.topnav:hover {color: #707a00; text-decoration: none;}
 a {font-weight: bold;}
 a:link{color: #ffffff;} /* white */
 a:visited{color: #000;} /* black */
-a:hover{color: #FF0000;}    /* red*/
+a:hover{color: gainsboro;} 
 
 /* #### Headings / text styling #### */
 h1, h2, h3, h4 {
