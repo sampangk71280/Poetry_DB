@@ -10,18 +10,4 @@
         $era_query = mysqli_query($dbconnect, $era_sql);
         $era_rs = mysqli_fetch_assoc($era_query);
 
-        if($era_ID !=0) 
-        {
-        ?>
-
-        <!--- Show Era tags -->
-        <span class="tag">
-            <a href="index.php?page=era&eraID=<?php ?>"></a>
-            <?php echo $era_rs['era'];?>
-        </span> &nbsp;
-
-        <?php
-        } // end era exists if
-
-       
-
+        

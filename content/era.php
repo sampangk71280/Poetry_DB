@@ -13,7 +13,7 @@ $era_to_find = $_REQUEST['eraID'];
     $era_rs = mysqli_fetch_assoc($era_query);
 ?>
 
-<h2>Era Results (<?php echo $era_rs['Era'] ?></h2>
+<h2>Era Results (<?php echo $era_rs['era'] ?>)</h2>
 
 <?php 
 
@@ -32,19 +32,24 @@ if($count > 0) {
 // loop through results and display them... 
 do {
 
-    $poem = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Era']);
+    $poem = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Content']);
 
     // get author name
     include("get_author.php");
 
     ?>
+<!-- shows result  -->
 <div class="results">
     <p>
-        <?php echo $poem; ?><br />
+        <?php echo $poem; ?><br /><br />
+
+        <!-- show author name  -->
+        <span class="authortag"> 
         <a href="index.php?page=author&authorID=<?php echo $find_rs['Author_ID'];
         ?>">
             <?php echo $author_name; ?>
         </a>
+</span>
     </p>
 
     <?php include("show_era.php");

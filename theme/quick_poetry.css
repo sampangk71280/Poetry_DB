@@ -142,8 +142,8 @@ a.topnav:hover {color: #707a00; text-decoration: none;}
 /* links in page */
 a {font-weight: bold;}
 a:link{color: #ffffff;} /* white */
-a:visited{color: #FF0000;} /* red */
-a:hover{color: #FF5D5D;}    /* pastel red*/
+a:visited{color: #000;} /* black */
+a:hover{color: #FF0000;}    /* red*/
 
 /* #### Headings / text styling #### */
 h1, h2, h3, h4 {
@@ -224,7 +224,7 @@ input {
 }
 
 .tag{
-    background-color: bisque ; 
+    background-color: bisque ;  /* light yellow */
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;

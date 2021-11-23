@@ -15,6 +15,8 @@ do {
 
     // get author name
     include("get_author.php");
+    // get era
+    include("show_era.php");
 
     ?>
 <div class="results">
@@ -35,8 +37,14 @@ do {
         </span>
     </p>
 
-    <?php include("show_era.php");
-    include("show_type.php"); ?>
+    <!-- show era tag -->
+    <span class="tag">
+        <a href="index.php?page=era&eraID=<?php echo $find_rs['Era_ID'];?>">
+        <?php echo $era_rs['era']; ?>
+        </a>
+        </span>
+
+    <?php include("show_type.php"); ?>
 
   
        
