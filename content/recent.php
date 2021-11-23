@@ -17,6 +17,8 @@ do {
     include("get_author.php");
     // get era 
     include("show_era.php");
+    // get type
+    include("show_type.php");
 
     ?>
 <div class="results">
@@ -36,17 +38,23 @@ do {
         
         </a>
         </span>
-    </p>
-    
+        
+        &ensp;
+        
+        <!-- show era  -->
         <span class="tag">
         <a href="index.php?page=era&eraID=<?php echo $find_rs['Era_ID'];?>">
-        <?php echo $era_rs['era']; ?>
-        </a>
-        </span>
+        <?php echo $era_rs['era']; ?></a></span>
+        
+        &ensp;
+
+        <!-- show type  -->
+        <span class="tag">
+        <a href="index.php?page=type&typeID=<?php echo $find_rs['Type_ID'];?>">
+        <?php echo $type_rs['type'];?></a></span>
 
 
-    <?php include("show_type.php"); ?>
-   
+    </p>    
        
 
 </div>

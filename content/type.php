@@ -1,26 +1,26 @@
 <?php 
 
-if(!isset($_REQUEST['eraID']))
+if(!isset($_REQUEST['typeID']))
 {
     header('Location: index.php');
 }
 
-$era_to_find = $_REQUEST['eraID'];
+$type_to_find = $_REQUEST['typeID'];
 
-    // get era heading... 
-    $era_sql = "SELECT * FROM `era` WHERE `era_ID` = $era_to_find";
-    $era_query = mysqli_query($dbconnect, $era_sql);
-    $era_rs = mysqli_fetch_assoc($era_query);
+    // get type heading... 
+    $type_sql = "SELECT * FROM `type` WHERE `type_ID` = $type_to_find";
+    $type_query = mysqli_query($dbconnect, $type_sql);
+    $type_rs = mysqli_fetch_assoc($type_query);
 ?>
 
-<h2>Era Results (<?php echo $era_rs['era'] ?>)</h2>
+<h2>Type Results (<?php echo $type_rs['type'] ?>)</h2>
 
 <?php 
 
 // get poems
 $find_sql = "SELECT * FROM `poetry` JOIN `author` 
 ON(`author`.`Author_ID` = `poetry`.`Author_ID`)
-WHERE `era_ID` = $era_to_find
+WHERE `type_ID` = $type_to_find
 ";
 $find_query = mysqli_query($dbconnect, $find_sql);
 $find_rs = mysqli_fetch_assoc($find_query);
@@ -73,7 +73,7 @@ do {
 
         <!-- show type  -->
         <span class="tag">
-        <a href="index.php?=type&typeID=<?php echo $find_rs['Type_ID'];?>">
+        <a href="index.php?page=type&typeID=<?php echo $find_rs['Type_ID'];?>">
         <?php echo $type_rs['type'];?></a></span>
 
 
