@@ -13,7 +13,7 @@ if (isset($_SESSION['admin'])) {
     
     // initialise form variables for poem
     $poem = "Please type your poem here";
-    $notes = "";
+    $title = "";
     $era_tag = "";
     $type_tag = "";
 
@@ -34,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // get data from form
     $poem = mysqli_real_escape_string($dbconnect, $_POST['poem']);
-    $notes = mysqli_real_escape_string($dbconnect, $_POST['notes']);
     $era_tag = mysqli_real_escape_string($dbconnect, $_POST['Era']);
     $type_tag = mysqli_real_escape_string($dbconnect, $_POST['Type']);
     
@@ -72,7 +71,7 @@ if($has_errors != "yes") {
 
     // add entry to the database
     $addentry_sql = "INSERT INTO `poetry` (`ID`, `Author_ID`, `Content`, `Title`, `Era_ID`, `Type_ID`) 
-    VALUES (NULL, '$author_ID', '$poem', '$notes', '$eraID', '$typeID');";
+    VALUES (NULL, '$author_ID', '$poem', '$title', '$eraID', '$typeID');";
     $addentry_query = mysqli_query($dbconnect, $addentry_sql);
 
     // get Poem ID for next page
@@ -107,6 +106,12 @@ else {
 <form autocomplete="off" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?page=../admin/add_entry");?>"
 enctype="multipart/form-data">
 
+    <!-- Title  -->
+    <input class="add-field <?php echo $title; ?>" type="text"
+        name="title" value="<?php echo $title; ?>" placeholder="Title (optional).."/>
+
+    <br/><br/>
+
     <!-- Poem text area -->
     <div class="<?php echo $poem_error; ?>"> 
         This field can't be blank   
@@ -116,10 +121,6 @@ enctype="multipart/form-data">
     row="6"><?php echo $poem; ?></textarea>
     <br/><br/>
 
-        <input class="add-field <?php echo $notes; ?>" type="text"
-        name="notes" value="<?php echo $notes; ?>" placeholder="Notes (optional).."/>
-
-    <br/><br/>
 
     <!-- Era  -->    
     <div class="<?php echo $era_tag_error ?>">
