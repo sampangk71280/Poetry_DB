@@ -256,3 +256,63 @@ input {
     border: solid 1px #721a1a;
 
 }
+
+/* editing tools formatting */
+.edit-tools {
+    text-align: right;
+    padding-right: 20px;
+}
+
+/* Form Formatting css */
+
+/* make height of drop downs slightly larger */
+select {
+    height: 40px;
+    padding: 5px;
+}
+
+/* controls input field on autocomplete boxes (pink for error,
+white for OK) */
+
+input.tag-error[type=text]{
+    background-color: #ff9e9e;
+}
+
+input.tag-ok[type=text]{
+    background-color: #fff;
+}
+
+/* field backgrounds */
+.form-ok{
+    background-color: #fff;
+}
+
+.form-error{
+    background-color: #ff9e9e;
+}
+
+/* error messages */
+.no-error {
+    display: none;
+}
+
+.error-text{
+    color: darkred;
+}
+
+textarea,
+input[type=text] {
+    font-family: 'Lato', sans-serif;
+    padding: 10px;
+    border-width: 1px;
+    margin: auto;
+}
+
+.add-field {
+    width: 90%;
+}
+
+textarea {
+    width: 90%;
+    max-width: 700px;
+}
