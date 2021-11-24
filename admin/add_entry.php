@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // get data from form
     $poem = mysqli_real_escape_string($dbconnect, $_POST['poem']);
+    $title = mysqli_real_escape_string($dbconnect, $_POST['title']);
     $era_tag = mysqli_real_escape_string($dbconnect, $_POST['Era']);
     $type_tag = mysqli_real_escape_string($dbconnect, $_POST['Type']);
     
