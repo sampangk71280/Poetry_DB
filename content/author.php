@@ -31,10 +31,7 @@ do {
     $title = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Title']);
      
     // get era 
-     include("show_era.php");
-     // get type
-     include("show_type.php");
-
+     include("show_era_type.php");
     
 
 ?>

@@ -15,10 +15,9 @@ do {
 
     // get author name
     include("get_author.php");
-    // get era
-    include("show_era.php");
-    // get type
-    include("show_type.php");
+    // get era/type
+    include("show_era_type.php");
+
 
     ?>
 <div class="results">
