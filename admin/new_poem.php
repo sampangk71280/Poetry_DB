@@ -57,7 +57,7 @@ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?page=../admin/new_poe
                 $author_full = $all_authors_rs['name'];
             ?>
 
-                <option value="<?php echo $all_authors_rs['Author_ID']; ?>">
+                <option value="<?php echo $all_authors_rs['author_ID']; ?>">
                     <?php echo $author_full; ?>
                 </option>  
 
