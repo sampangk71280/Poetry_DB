@@ -195,7 +195,7 @@ form {
 
 
 input[type="submit"]:hover {
-    background-color: #000;
+    background-color: #ff913a; /* orange */
 }
 
 
