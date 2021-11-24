@@ -20,15 +20,14 @@ do {
 
     // get author name
     include("get_author.php");
-    // get era 
-    include("show_era_type.php");
-
 
     ?>
 <div class="results">
      <!-- show title -->
      <h5>
         <?php echo $title; ?>
+        <!-- get era -->
+        <?php include("show_era_type.php");?>
     </h5>
 
     <!-- show content  -->

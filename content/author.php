@@ -28,11 +28,7 @@ include("get_author.php");
 <?php
 // loop through titles and display
 do {
-    $title = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Title']);
-     
-    // get era 
-     include("show_era_type.php");
-    
+    $title = preg_replace('/[^A-Za-z0-9.,?\s\'\-]/', ' ', $find_rs['Title']);    
 
 ?>
 
@@ -50,6 +46,8 @@ do {
 <div class="results">
     <h5>
         <?php echo $title; ?>
+        <!-- get era -->
+        <?php include("show_era_type.php");?>
      </h5>   
 
     <p>
