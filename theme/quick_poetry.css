@@ -165,7 +165,7 @@ h5 {
 /* ### Form / Search  Styling #### */
 
 form {
-    width: 100%;
+    width: 90%;
 }
 
 .search {
@@ -211,6 +211,7 @@ input {
 .quicksearch {
     border-radius: 5px 0 0 5px; 
     display: inline-block;
+    width: 90%;
 }
 
 /* ### Results styling, includes 'tags' button ### */
@@ -257,7 +258,7 @@ input {
 
 }
 
-/* editing tools formatting */
+editing tools formatting
 .edit-tools {
     text-align: right;
     padding-right: 20px;
@@ -280,11 +281,13 @@ input.tag-error[type=text]{
 
 input.tag-ok[type=text]{
     background-color: #fff;
+    
 }
 
 /* field backgrounds */
 .form-ok{
     background-color: #fff;
+    
 }
 
 .form-error{
@@ -306,10 +309,11 @@ input[type=text] {
     padding: 10px;
     border-width: 1px;
     margin: auto;
+    width: 95%;
 }
 
 .add-field {
-    width: 90%;
+    width: 95%;
 }
 
 textarea {

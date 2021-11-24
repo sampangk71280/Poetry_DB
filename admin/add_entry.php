@@ -3,7 +3,7 @@
 if (isset($_SESSION['admin'])) {
 
     $author_ID = $_SESSION['Add_Poem'];
-    echo "AuthorID: ".$author_ID;
+    // echo "AuthorID: ".$author_ID;
 
     // get era / type list from database
     $era_sql = "SELECT * FROM `era` ORDER BY `era`.`era` ASC";
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $poem = mysqli_real_escape_string($dbconnect, $_POST['poem']);
     $title = mysqli_real_escape_string($dbconnect, $_POST['title']);
     $era_tag = mysqli_real_escape_string($dbconnect, $_POST['Era']);
-    $type_tag = mysqli_real_escape_string($dbconnect, $_POST['Type']);
+    $type_tag = mysqli_real_escape_string($dbconnect, $_POST['type']);
     
 
 
@@ -140,9 +140,9 @@ enctype="multipart/form-data">
         Please enter the type of poem!
     </div>
     
-    <div class="autocomplete">
-        <input id="type" type="text" name="Type"
-        placeholder="Type (start typing)">
+    <div class="autocomplete"> 
+       <input class="<?php echo $type_tag_field; ?>" id="type"
+       type="text" name="type" placeholder="Type (start typing)...">
     </div>
 
     <br /><br />

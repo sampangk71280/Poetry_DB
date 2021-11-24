@@ -22,7 +22,7 @@
 
                         <input class="search quicksearch" type="text" 
                         name="quick_search" size="40" value="" required placeholder="Quick Search..." />
-
+                        
                         <input class="submit" type="submit" name="find_quick" value="&#xf002;" />
 
                     </form>     <!-- / quick search -->
