@@ -24,13 +24,13 @@
                 ?>
 
             <div class="edit-tools">
-            <a href="index.php?page=../admin/editquote&ID=<?php echo 
-            $find_rs['ID'];?>" title="Edit Quote">
+            <a href="index.php?page=../admin/editpoem&ID=<?php echo 
+            $find_rs['ID'];?>" title="Edit Poem">
             <i class="fa fa-edit fa-2x"></i></a>
 
             &nbsp; &nbsp; 
-            <a href="index.php?page=../admin/deletequote_confirm&ID=<?php echo
-            $find_rs['ID']; ?>" title="Delete Quote">
+            <a href="index.php?page=../admin/deletepoem_confirm&ID=<?php echo
+            $find_rs['ID']; ?>" title="Delete Poem">
             <i class="fa fa-trash fa-2x"></i></a>
 
             </div> <!-- / edit tools div --> 
