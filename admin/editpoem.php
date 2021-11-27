@@ -47,9 +47,10 @@ $era_ID = $type_ID = 0;
 $has_errors = "no";
 
 // set up error fields / visibility
-$poem_error = $era_error = $type_error = "no-error";
+$poem_error = $era_tag_error = $type_tag_error = "no-error";
 $poem_field = "form-ok";
-$era_field = "tag-ok";
+$era_tag_field = "tag-ok";
+$type_tag_field = "tag-ok";
 
 // Code below executes when the form is submitted...
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -57,7 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // get data from form
     $author_ID = mysqli_real_escape_string($dbconnect, $_POST['author']);
     $poem = mysqli_real_escape_string($dbconnect, $_POST['poem']);
-    $title = mysqli_real_escape_string($dbconnect, $_POST['title']);
     $era_tag = mysqli_real_escape_string($dbconnect, $_POST['Era']);
     $type_tag = mysqli_real_escape_string($dbconnect, $_POST['type']);
 
