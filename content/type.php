@@ -47,6 +47,7 @@ do {
     <!-- show title -->
     <h5>
         <?php echo $title; ?>
+    </h5>
     <!-- get era -->
     <?php include("show_era_type.php");?>
 
