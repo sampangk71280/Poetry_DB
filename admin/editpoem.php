@@ -29,9 +29,6 @@ if (isset($_SESSION['admin'])) {
     $era_ID = $find_rs['Era_ID'];
     $type_ID = $find_rs['Type_ID'];
 
-	// Set tags to blank at start...
-	$era_tag = $type_tag = "";
-
     // Retrieve era names from era table... 
     $era_rs = get_rs($dbconnect, "SELECT * FROM `era` WHERE era_ID = $era_ID");
     $era = $era_rs['era'];
