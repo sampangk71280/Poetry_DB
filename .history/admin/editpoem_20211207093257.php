@@ -40,7 +40,7 @@ if (isset($_SESSION['admin'])) {
 	 
 
 // initialise tag ID's
-$era_ID = $type_ID = 0; 
+// $era_ID = $type_ID = 0; 
 
 $has_errors = "no";
 

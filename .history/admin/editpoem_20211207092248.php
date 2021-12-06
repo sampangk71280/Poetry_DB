@@ -84,16 +84,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if($has_errors != "yes") {
     
-	echo "no errors";
+	
 
     // Get tag ID's via get_ID function... 
     $eraID = get_ID($dbconnect, 'era', 'era_ID', 'era', $era_tag);
     $typeID = get_ID($dbconnect, 'type', 'type_ID', 'type', $type_tag);
 
     // edit database entry
-    $editentry_sql= "UPDATE `poetry` SET `Author_ID` = '$author_ID', 
-    `Content` = '$poem', `Era_ID` = '$era_ID', `Type_ID` = '$type_ID' WHERE `poetry`.`ID` = $ID";
-   
+    $editentry_sql= "UPDATE `poetry` SET `Author_ID` = '$author_ID', `Content` = '$poem', `Era_ID` = '$era_ID', `Type_ID` = '$type_ID', WHERE `poetry`.`ID` = $ID";
     $editentry_query = mysqli_query($dbconnect, $editentry_sql);
 	
 

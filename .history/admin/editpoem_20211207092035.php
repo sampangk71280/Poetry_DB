@@ -1,5 +1,5 @@
 <?php
-// check user is logged in 
+// cehck user is logged in 
 if (isset($_SESSION['admin'])) {
 
     $ID = $_REQUEST['ID'];
@@ -16,7 +16,6 @@ if (isset($_SESSION['admin'])) {
     $author_ID = $find_rs['author_ID'];
     $author_name = $find_rs['name'];
 
-    
     // get era / type list from database
     $era_sql = "SELECT * FROM `era` ORDER BY `era`.`era` ASC";
     $type_sql = "SELECT * FROM `type` ORDER BY `type` ASC";
@@ -62,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // check data is valid
 
     // check poem is not blank
-    if ($poem == "Please type your poem here" || $poem == "" ) {
+    if ($poem == "Please type your poem here" || $poem == " " ) {
         $has_errors = "yes";
         $poem_error = "error-text";
         $poem_field = "form-error";
@@ -83,22 +82,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 if($has_errors != "yes") {
-    
-	echo "no errors";
 
     // Get tag ID's via get_ID function... 
     $eraID = get_ID($dbconnect, 'era', 'era_ID', 'era', $era_tag);
     $typeID = get_ID($dbconnect, 'type', 'type_ID', 'type', $type_tag);
 
     // edit database entry
-    $editentry_sql= "UPDATE `poetry` SET `Author_ID` = '$author_ID', 
-    `Content` = '$poem', `Era_ID` = '$era_ID', `Type_ID` = '$type_ID' WHERE `poetry`.`ID` = $ID";
-   
+    $editentry_sql= "UPDATE `poetry` SET `Author_ID` = '$author_ID', `Content` = '$poem', 
+    `Era_ID` = '$era_ID', `Type_ID` = '$type_ID', 
+    WHERE `poetry`.`ID` = $ID";
     $editentry_query = mysqli_query($dbconnect, $editentry_sql);
-	
 
     // get Poem ID for next page
-    $get_poem_sql = "SELECT * FROM `poetry` WHERE `ID` = '$ID' ";
+    $get_poem_sql = "SELECT * FROM `poetry` WHERE `Content` = '$poem' ";
     $get_poem_query = mysqli_query($dbconnect, $get_poem_sql);
     $get_poem_rs = mysqli_fetch_assoc($get_poem_query);
 
@@ -118,7 +114,7 @@ if($has_errors != "yes") {
 else {
 
     $login_error = 'Please login to access this page';
-    //header("Location: index.php?page=../admin/login&error=$login_error");
+    header("Location: index.php?page=../admin/login&error=$login_error");
 
 } // end user not logged in else
 
@@ -129,7 +125,7 @@ else {
 <form autocomplete="off" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?page=../admin/editpoem&ID=$ID");?>"
 enctype="multipart/form-data">
 
-    <b>Poem Author:</b> &nbsp; &nbsp;
+    <b>Quote Author:</b> &nbsp; &nbsp;
 
     <select name="author">
         <!-- Default option is new author -->
