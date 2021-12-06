@@ -91,7 +91,7 @@ if($has_errors != "yes") {
     $typeID = get_ID($dbconnect, 'type', 'type_ID', 'type', $type_tag);
 
     // edit database entry
-    $editentry_sql= "UPDATE `poetry` SET 
+    $editentry_sql= "UPDATE `poetry` SET `Author_ID` = '$author_ID', 
     `Content` = '$poem', `Era_ID` = '$eraID', `Type_ID` = '$typeID' WHERE `poetry`.`ID` = $ID";
    
     $editentry_query = mysqli_query($dbconnect, $editentry_sql);
@@ -131,9 +131,10 @@ enctype="multipart/form-data">
 
     <b>Poem Author:</b> &nbsp; &nbsp; <?php echo $author_name?>
 
-    <br /> <br />
+
     
-    <b>Poem: </b><br/>
+    <br /> <br />
+
     <!-- Quote text area -->
     <div class="<?php echo $poem_error; ?>"> 
         This field can't be blank   

@@ -91,7 +91,7 @@ if($has_errors != "yes") {
     $typeID = get_ID($dbconnect, 'type', 'type_ID', 'type', $type_tag);
 
     // edit database entry
-    $editentry_sql= "UPDATE `poetry` SET 
+    $editentry_sql= "UPDATE `poetry` SET `Author_ID` = '$author_ID', 
     `Content` = '$poem', `Era_ID` = '$eraID', `Type_ID` = '$typeID' WHERE `poetry`.`ID` = $ID";
    
     $editentry_query = mysqli_query($dbconnect, $editentry_sql);
@@ -131,6 +131,40 @@ enctype="multipart/form-data">
 
     <b>Poem Author:</b> &nbsp; &nbsp; <?php echo $author_name?>
 
+    <select name="author">
+        <!-- Default option is new author -->
+        <option value="<?php echo $author_ID; ?>" disabled selected> 
+            <?php echo $author_name; ?>
+        </option>
+        
+
+        <?php
+        
+     // get authors from database
+     $all_authors_sql = "SELECT * FROM `author` ORDER BY `name` ASC";
+     $all_authors_query = mysqli_query($dbconnect, $all_authors_sql);
+     $all_authors_rs = mysqli_fetch_assoc($all_authors_query); 
+
+        do {
+
+        $author_ID = $all_authors_rs['Author_ID'];
+        $author_name = $all_authors_rs['name'];
+
+        ?>
+
+            <option value="<?php echo $author_ID; ?>">
+                <?php echo $author_name; ?>
+            </option>  
+
+        <?php
+        } // end of the author options 'do'
+
+        while($all_authors_rs=mysqli_fetch_assoc($all_authors_query))
+        
+        ?>
+
+    </select>
+    
     <br /> <br />
     
     <b>Poem: </b><br/>
