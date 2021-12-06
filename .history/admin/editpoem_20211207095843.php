@@ -95,7 +95,7 @@ if($has_errors != "yes") {
 
     // edit database entry
     $editentry_sql= "UPDATE `poetry` SET `Author_ID` = '$author_ID', 
-    `Content` = '$poem', `Era_ID` = '$eraID', `Type_ID` = '$typeID' WHERE `poetry`.`ID` = $ID";
+    `Content` = '$poem', `Era_ID` = '$era_ID', `Type_ID` = '$type_ID' WHERE `poetry`.`ID` = $ID";
    
     $editentry_query = mysqli_query($dbconnect, $editentry_sql);
 	

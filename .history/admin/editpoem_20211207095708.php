@@ -95,7 +95,7 @@ if($has_errors != "yes") {
 
     // edit database entry
     $editentry_sql= "UPDATE `poetry` SET `Author_ID` = '$author_ID', 
-    `Content` = '$poem', `Era_ID` = '$eraID', `Type_ID` = '$typeID' WHERE `poetry`.`ID` = $ID";
+    `Content` = '$poem', `Era_ID` = '$era_ID', `Type_ID` = '$type_ID' WHERE `poetry`.`ID` = $ID";
    
     $editentry_query = mysqli_query($dbconnect, $editentry_sql);
 	
@@ -185,7 +185,7 @@ enctype="multipart/form-data">
     </div>
     
    <div class="autocomplete"> 
-       <input class="<?php echo $era_tag_field; ?>" id="era" value="<?php echo $era_tag; ?>"
+       <input class="<?php echo $era_tag_field; ?>" id="era" value="<?php echo $era; ?>"
        type="text" name="Era" placeholder="Era (start typing)...">
     </div>
 
@@ -197,7 +197,7 @@ enctype="multipart/form-data">
     </div>
     
     <div class="autocomplete"> 
-       <input class="<?php echo $type_tag_field; ?>" id="type" value="<?php echo $type_tag; ?>"
+       <input class="<?php echo $type_tag_field; ?>" id="type" value="<?php echo $type; ?>"
        type="text" name="type" placeholder="Type (start typing)...">
     </div>
 

@@ -30,20 +30,17 @@ if (isset($_SESSION['admin'])) {
     $era_ID = $find_rs['Era_ID'];
     $type_ID = $find_rs['Type_ID'];
 
-    // set tags to blank at start
-    $era_tag = $type_tag = "";
-
     // Retrieve era names from era table... 
     $era_rs = get_rs($dbconnect, "SELECT * FROM `era` WHERE era_ID = $era_ID");
-    $era_tag = $era_rs['era'];
+    $era = $era_rs['era'];
 
     // Retrieve type names from type table... 
     $type_rs = get_rs($dbconnect, "SELECT * FROM `type` WHERE type_ID = $type_ID");
-    $type_tag = $type_rs['type'];
+    $type = $type_rs['type'];
 	 
 
 // initialise tag ID's
-$era_tag_ID = $type_tag_ID = 0; 
+$era_ID = $type_ID = 0; 
 
 $has_errors = "no";
 
@@ -95,7 +92,7 @@ if($has_errors != "yes") {
 
     // edit database entry
     $editentry_sql= "UPDATE `poetry` SET `Author_ID` = '$author_ID', 
-    `Content` = '$poem', `Era_ID` = '$eraID', `Type_ID` = '$typeID' WHERE `poetry`.`ID` = $ID";
+    `Content` = '$poem', `Era_ID` = '$era_ID', `Type_ID` = '$type_ID' WHERE `poetry`.`ID` = $ID;
    
     $editentry_query = mysqli_query($dbconnect, $editentry_sql);
 	
@@ -185,7 +182,7 @@ enctype="multipart/form-data">
     </div>
     
    <div class="autocomplete"> 
-       <input class="<?php echo $era_tag_field; ?>" id="era" value="<?php echo $era_tag; ?>"
+       <input class="<?php echo $era_tag_field; ?>" id="era" value="<?php echo $era; ?>"
        type="text" name="Era" placeholder="Era (start typing)...">
     </div>
 
@@ -197,7 +194,7 @@ enctype="multipart/form-data">
     </div>
     
     <div class="autocomplete"> 
-       <input class="<?php echo $type_tag_field; ?>" id="type" value="<?php echo $type_tag; ?>"
+       <input class="<?php echo $type_tag_field; ?>" id="type" value="<?php echo $type; ?>"
        type="text" name="type" placeholder="Type (start typing)...">
     </div>
 
