@@ -241,24 +241,6 @@ input {
     border-radius: 5px;
 }
 
-.deletetag{
-    background-color: #FFA660 ;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: solid 1px #000;
-    border-radius: 5px;
-}
-
-.deletetagno{
-    background-color: #ff4646 ;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: solid 1px #000;
-    border-radius: 5px;
-}
-
 .about{
     background: #FFEC00; /* yellow */
     border: solid 1px #E9D800; /* yellow but slightly darker*/

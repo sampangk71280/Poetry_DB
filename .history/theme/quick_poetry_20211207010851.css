@@ -251,7 +251,7 @@ input {
 }
 
 .deletetagno{
-    background-color: #ff4646 ;
+    background-color: hsl(0, 100%, 64%) ;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -299,13 +299,11 @@ input.tag-error[type=text]{
 
 input.tag-ok[type=text]{
     background-color: #fff;
-    
 }
 
 /* field backgrounds */
 .form-ok{
     background-color: #fff;
-    
 }
 
 .form-error{
@@ -327,11 +325,10 @@ input[type=text] {
     padding: 10px;
     border-width: 1px;
     margin: auto;
-    width: 95%;
 }
 
 .add-field {
-    width: 95%;
+    width: 90%;
 }
 
 textarea {
