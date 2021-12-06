@@ -84,10 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if($has_errors != "yes") {
 	
-    echo $poem_ID;
-    echo $author_name;
-    echo $era_ID;
-    echo $type_ID;
 	echo "no errors";
 
     // Get tag ID's via get_ID function... 
@@ -131,7 +127,7 @@ else {
 <form autocomplete="off" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?page=../admin/editpoem&ID=$ID");?>"
 enctype="multipart/form-data">
 
-    <b>Poem Author:</b> &nbsp; &nbsp;
+    <b>Quote Author:</b> &nbsp; &nbsp;
 
     <select name="author">
         <!-- Default option is new author -->

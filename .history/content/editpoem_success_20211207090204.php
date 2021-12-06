@@ -4,7 +4,6 @@
 
 <?php 
 
-
 $poem_ID = $_REQUEST['poem_ID'];   
 
 $find_sql = "SELECT * FROM `poetry`

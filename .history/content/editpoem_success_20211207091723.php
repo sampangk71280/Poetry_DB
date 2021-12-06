@@ -1,9 +1,13 @@
 <h2>Edit Success!</h2>
 
+echo $poem_ID;
+    echo $author_name;
+    echo $era_ID;
+    echo $type_ID;
+
 <p>You have edited the following poem</p>
 
 <?php 
-
 
 $poem_ID = $_REQUEST['poem_ID'];   
 

@@ -4,8 +4,7 @@
 
 <?php 
 
-
-$poem_ID = $_REQUEST['poem_ID'];   
+$poem_ID = $_REQUEST['ID'];   
 
 $find_sql = "SELECT * FROM `poetry`
 JOIN author ON(`author`.`Author_ID` = `poetry`.`Author_ID`) 

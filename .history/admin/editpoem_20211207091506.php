@@ -84,10 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if($has_errors != "yes") {
 	
-    echo $poem_ID;
-    echo $author_name;
-    echo $era_ID;
-    echo $type_ID;
 	echo "no errors";
 
     // Get tag ID's via get_ID function... 

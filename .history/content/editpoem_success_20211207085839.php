@@ -4,12 +4,11 @@
 
 <?php 
 
-
-$poem_ID = $_REQUEST['poem_ID'];   
+$ID = $_REQUEST['poem_ID'];   
 
 $find_sql = "SELECT * FROM `poetry`
 JOIN author ON(`author`.`Author_ID` = `poetry`.`Author_ID`) 
-WHERE `poetry`.`ID` = $poem_ID";
+WHERE `poetry`.`ID` = $ID";
 $find_query = mysqli_query($dbconnect, $find_sql);
 $find_rs=mysqli_fetch_assoc($find_query);
 

@@ -84,10 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if($has_errors != "yes") {
 	
-    echo $poem_ID;
-    echo $author_name;
-    echo $era_ID;
-    echo $type_ID;
 	echo "no errors";
 
     // Get tag ID's via get_ID function... 
@@ -95,7 +91,9 @@ if($has_errors != "yes") {
     $typeID = get_ID($dbconnect, 'type', 'type_ID', 'type', $type_tag);
 
     // edit database entry
-    $editentry_sql= "UPDATE `poetry` SET `Author_ID` = '$author_ID', `Content` = '$poem', `Era_ID` = '$era_ID', `Type_ID` = '$type_ID', WHERE `poetry`.`ID` = $ID";
+    $editentry_sql= "UPDATE `poetry` SET `Author_ID` = '$author_ID', 
+    `Content` = '$poem', `Era_ID` = '$era_ID', `Type_ID` = '$type_ID',
+     WHERE `poetry`.`ID` = $ID";
     $editentry_query = mysqli_query($dbconnect, $editentry_sql);
 	
 
@@ -131,7 +129,7 @@ else {
 <form autocomplete="off" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?page=../admin/editpoem&ID=$ID");?>"
 enctype="multipart/form-data">
 
-    <b>Poem Author:</b> &nbsp; &nbsp;
+    <b>Quote Author:</b> &nbsp; &nbsp;
 
     <select name="author">
         <!-- Default option is new author -->

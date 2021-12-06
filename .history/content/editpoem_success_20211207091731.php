@@ -4,6 +4,10 @@
 
 <?php 
 
+echo $poem_ID;
+    echo $author_name;
+    echo $era_ID;
+    echo $type_ID;
 
 $poem_ID = $_REQUEST['poem_ID'];   
 

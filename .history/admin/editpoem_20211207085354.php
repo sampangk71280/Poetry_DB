@@ -1,5 +1,5 @@
 <?php
-// check user is logged in 
+// cehck user is logged in 
 if (isset($_SESSION['admin'])) {
 
     $ID = $_REQUEST['ID'];
@@ -16,7 +16,6 @@ if (isset($_SESSION['admin'])) {
     $author_ID = $find_rs['author_ID'];
     $author_name = $find_rs['name'];
 
-    
     // get era / type list from database
     $era_sql = "SELECT * FROM `era` ORDER BY `era`.`era` ASC";
     $type_sql = "SELECT * FROM `type` ORDER BY `type` ASC";
@@ -84,10 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if($has_errors != "yes") {
 	
-    echo $poem_ID;
-    echo $author_name;
-    echo $era_ID;
-    echo $type_ID;
 	echo "no errors";
 
     // Get tag ID's via get_ID function... 
@@ -131,7 +126,7 @@ else {
 <form autocomplete="off" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?page=../admin/editpoem&ID=$ID");?>"
 enctype="multipart/form-data">
 
-    <b>Poem Author:</b> &nbsp; &nbsp;
+    <b>Quote Author:</b> &nbsp; &nbsp;
 
     <select name="author">
         <!-- Default option is new author -->
