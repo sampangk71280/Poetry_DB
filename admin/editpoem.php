@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // check data is valid
 
     // check poem is not blank
-    if ($poem == "Please type your poem here" || $poem == " " ) {
+    if ($poem == "Please type your poem here" || $poem == "" ) {
         $has_errors = "yes";
         $poem_error = "error-text";
         $poem_field = "form-error";
@@ -98,8 +98,8 @@ if($has_errors != "yes") {
     $get_poem_query = mysqli_query($dbconnect, $get_poem_sql);
     $get_poem_rs = mysqli_fetch_assoc($get_poem_query);
 
-   $poem_ID = $get_poem_rs['ID'];
-   $_SESSION['Poem_Success']=$poem_ID;
+    $poem_ID = $get_poem_rs['ID'];
+    $_SESSION['Poem_Success']=$poem_ID;
 
     // Go to success page... 
     header('Location: index.php?page=editpoem_success&poem_ID='.$poem_ID);
