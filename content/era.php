@@ -51,8 +51,10 @@ do {
     </h5>
 
     <p>
+        <PRE>
         <!-- show poem  -->
         <?php echo $poem; ?><br /><br />
+        </PRE>
 
         <!-- show author name  -->
         <span class="authortag"> 

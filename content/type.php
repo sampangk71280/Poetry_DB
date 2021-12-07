@@ -52,8 +52,10 @@ do {
     <?php include("show_era_type.php");?>
 
     <p>
+        <PRE>
         <!-- show poem  -->
         <?php echo $poem; ?><br /><br />
+        </PRE> 
 
         <!-- show author name  -->
         <span class="authortag"> 

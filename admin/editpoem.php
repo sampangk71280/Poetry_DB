@@ -3,7 +3,6 @@
 if (isset($_SESSION['admin'])) {
 
     $ID = $_REQUEST['ID'];
-    echo "Author ID:".$ID;
 
     // Get Author ID
     $find_sql = "SELECT * FROM `poetry`

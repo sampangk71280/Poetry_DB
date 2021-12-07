@@ -38,9 +38,11 @@ do {
 
     <!-- show content  -->
     <p>   
+        <PRE>
         <?php echo $content; ?><br /> <br />
-
-         <!-- show author name -->
+        </PRE>
+        
+        <!-- show author name -->
         <span class= "authortag">
         <a href="index.php?page=author&authorID=<?php echo $find_rs['Author_ID'];?>">    
         <?php echo $author_name; ?>

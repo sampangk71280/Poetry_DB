@@ -85,6 +85,7 @@ body {
 .topsearch {
     grid-area: topsearch;
     text-align: right;
+    width: 80%;
 }
 
 .topadmin {
@@ -141,9 +142,9 @@ a.topnav:hover {color: #707a00; text-decoration: none;}
 
 /* links in page */
 a {font-weight: bold;}
-a:link{color: #ffffff;} /* white */
-a:visited{color: #000;} /* black */
-a:hover{color: gainsboro;} 
+a:link{color: #000;} /* white */
+a:visited{color: rgb(73, 73, 73);} /* black */
+a:hover{color: white;} 
 
 /* #### Headings / text styling #### */
 h1, h2, h3, h4 {
@@ -165,7 +166,8 @@ h5 {
 /* ### Form / Search  Styling #### */
 
 form {
-    width: 90%;
+    width: 100%;
+    float: left;
 }
 
 .search {
@@ -175,6 +177,7 @@ form {
 
 .submit::-moz-focus-inner { 
     border: 0;
+    position: relative;
 }
 
 
@@ -184,7 +187,9 @@ form {
     width: 45px;
     font-size: 14px;
     
-    left:-5px;
+    left: 45px;
+    top: -40px;
+    
     background-color: #636263; 
     color:#d6d3d7;
     border: 1px solid #000;
@@ -195,7 +200,7 @@ form {
 
 
 input[type="submit"]:hover {
-    background-color: #ff913a; /* orange */
+    background-color: rgb(197, 196, 196);
 }
 
 
@@ -211,13 +216,13 @@ input {
 .quicksearch {
     border-radius: 5px 0 0 5px; 
     display: inline-block;
-    width: 90%;
+    position: relative;
 }
 
 /* ### Results styling, includes 'tags' button ### */
 .results{
     background-color:#D2D2D2;
-    border: solid 1px #4c9c72;
+    border: solid 1px #000;
     padding: 10px;
 
     margin-right: 20px;

@@ -51,8 +51,9 @@ do {
      </h5>   
 
     <p>
+        <PRE> 
         <?php echo  $content; ?><br /><br />
-    
+        </PRE>
          <!-- show era  -->
          <span class="tag">
         <a href="index.php?page=era&eraID=<?php echo $find_rs['Era_ID'];?>">

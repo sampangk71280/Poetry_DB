@@ -14,15 +14,15 @@
                     <a href="index.php?page=random">Random</a> 
                 </div>  <!-- / common searches -->
             
-                <div class="topsearch">
+                 <div class="topsearch">
                     
                     <!-- Quick Search -->           
                     <form method="post" action="index.php?page=quick_search" 
                     enctype="multipart/form-data">
 
                         <input class="search quicksearch" type="text" 
-                        name="quick_search" size="40" value="" required placeholder="Quick Search..." />
-                        
+                        name="quick_search" width="40" value="" required placeholder="Quick Search..." />
+            
                         <input class="submit" type="submit" name="find_quick" value="&#xf002;" />
 
                     </form>     <!-- / quick search -->
